@@ -1,0 +1,36 @@
+body {
+  margin:0;
+  padding:0;
+  background-image: url("cover_image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.container {
+  background-color: white;
+  opacity: .9;
+  border-radius: 10px;
+  width: 50%;
+  padding: 20px 0 20px 0;
+  position: absolute;
+  margin-top: 175px;
+  margin-left: 25%;
+}
+h1 {
+  text-align: center;
+  color: black;
+}
+#input_fields {
+  width: 100%;
+  text-align: center;
+}
+#input_fields > p, button, input {
+  margin: 10px;
+  font-size: 1.1em;
+}
+input:hover, button:hover {
+  background-color: lightgray;
+}
+button {
+  border-radius: 4px;
+}
