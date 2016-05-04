@@ -3,14 +3,11 @@
 function calculatePace () {
 	var distance = document.getElementById("distance").value;
 	var time = document.getElementById("time").value;
-
+	var minutes = Math.floor(time/distance);
 	//following cuts float to hundredth decimal
 	var pace = (time/distance).toFixed(2);
 	//console.log(pace);
 	//following removes all decimals for next calc
-	var minutes = Math.floor(time/distance);
-	//console.log(minutes);
-	//following grabs only decimals for 60-ceiling conversion
 	var float = pace - Math.floor(time/distance);
 	//console.log(float);
 	//following converts float to time and rounds to integer
