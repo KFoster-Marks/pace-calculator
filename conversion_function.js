@@ -1,8 +1,8 @@
 //13 miles   1 hour 46 minutes 40 seconds result should be "8:12"
-
+"use strict";
 
 function calculatePace(hours, minutes, seconds, distance) {
-  var hourMin = hours * 60;//convert hour to minutes
+	var hourMin = hours * 60;//convert hour to minutes
   console.log(hourMin);
   //add hourMinutes to minutes && convert hourPlusMinutes to seconds
   var minutesPlusHoursSeconds = (hourMin + minutes)*60;
@@ -17,17 +17,16 @@ function calculatePace(hours, minutes, seconds, distance) {
   var totalTime = (secondsTotal/60)/distance;
   console.log(totalTime);
   //isolate float--TOTAL minus TOTAL.ROUND
-  var float = totalTime - Math.round(totalTime);
-  var totalMinutes = Math.round(totalTime);
-  console.log(totalMinutes);
-  console.log(float);
+  var float = totalTime - Math.floor(totalTime);
+  var totalMinutes = Math.floor(totalTime);
+  console.log("The total minutes are " + totalMinutes);
+  console.log("The float is " + float);
   //multiply FLOAT by 60--round this to nearest integer, and this is seconds
-  var seconds = Math.round(float*60);
-  console.log(seconds);
+  seconds = Math.floor(float*60);
+  console.log("The seconds are " + seconds);
   if (seconds < 10) {
     seconds = "0" + seconds;
   }
-  console.log(seconds);
-  //document.getElementById("paceDisplay").innerHTML = "Your pace was " + minutes + ":" + seconds;
+  console.log("Your pace was " + totalMinutes + ":" + seconds);
 }
-calculatePace(1, 45, 2, 13);
+calculatePace(1, 45, 40, 13);

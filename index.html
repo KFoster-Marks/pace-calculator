@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Pace Calculator</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
     <link rel="icon" href="#">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="script.js"></script>
@@ -14,12 +15,14 @@
         <h1>Pace Calculator</h1>
       </div>
       <div id="input_fields">
-        <input id="distance" type="text" value="Distance in miles"><br>
-        <input id="time" type="text" value="Time in minutes"><br>
+        <!-- why is required attribute not working? -->
+        <input required="required" id="distance" type="text" placeholder="distance in miles"><br>
+        <input id="hours" type="text" placeholder="hours"><br>
+        <input id="minutes" type="text" placeholder="minutes"><br>
+        <input id="seconds" type="text" placeholder="seconds"><br>
         <button onclick="calculatePace()">Calculate</button><br>
         <p id="paceDisplay"></p>
       </div>
     </div>
   </body>
-
 </html>

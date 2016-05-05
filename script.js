@@ -1,26 +1,20 @@
 "use strict";
 
-function calculatePace () {
+function calculatePace(hours, minutes, seconds, distance) {
 	var distance = document.getElementById("distance").value;
-	var time = document.getElementById("time").value;
-	var minutes = Math.floor(time/distance);
-	//following cuts float to hundredth decimal
-	var pace = (time/distance).toFixed(2);
-	//console.log(pace);
-	//following removes all decimals for next calc
-	var float = pace - Math.floor(time/distance);
-	//console.log(float);
-	//following converts float to time and rounds to integer
-	var seconds = Math.round(float*60);
-	//console.log(seconds);
-	//following adds 0 to front if one digit
-	if (seconds < 10) {
-		seconds = "0" + seconds;
-	}
-	console.log(minutes + ":" + seconds);
-	document.getElementById("paceDisplay").innerHTML = "Your pace was " + minutes + ":" + seconds;
-}
+	var hours = Number(document.getElementById("hours").value);
+	var minutes = Number(document.getElementById("minutes").value);
+	var seconds = Number(document.getElementById("seconds").value);
 
-// re-write function to accept three inputs for time
-// hours, minutes & seconds
-// perhaps whole function should consist of three nested functions
+	var hourMin = (hours * 60);
+  var minutesPlusHoursSeconds = (hourMin + minutes)*60;
+  var secondsTotal = minutesPlusHoursSeconds + seconds;
+  var totalTime = (secondsTotal/60)/distance;
+  var float = totalTime - Math.floor(totalTime);
+  var totalMinutes = Math.floor(totalTime);
+  seconds = Math.floor(float*60);
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  document.getElementById("paceDisplay").innerHTML = "Your pace was " + totalMinutes + ":" + seconds;
+}
